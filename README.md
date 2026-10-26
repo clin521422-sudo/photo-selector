@@ -6,15 +6,6 @@
 
 上传照片 → 从**清晰度、曝光、色彩、主体**四个维度量化评分 → 给出综合建议（建议保留 / 建议复核 / 建议淘汰）。
 **辅助筛选，不做自动删除**，最终决定权留给用户。
-
-<p align="center">
-  <img src="docs/screenshots/demo-detection.jpg" alt="YOLOv8n 主体检测示例" width="720">
-</p>
-
-<p align="center">
-  <sub>主体检测示例：YOLOv8n ONNX 经 <code>cv2.dnn</code> 推理，输出目标框与置信度 —— 全程无需 PyTorch</sub>
-</p>
-
 ---
 
 ## English
