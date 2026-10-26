@@ -1,0 +1,44 @@
+# 虚拟环境（每台机器各自建，不要进仓库）
+.venv/
+venv/
+
+# 临时文件
+.tmp/
+.toolconfig/
+__pycache__/
+*.pyc
+
+# 大体积二进制（cloudflared / uv 等，首次运行脚本会自动下载）
+tools/bin/
+*.exe
+
+# 程序输出
+output/
+*.zip
+*.log
+dist/
+runs/
+
+# 手机上传后自动归档的照片（个人图片，不进仓库）
+received/
+
+# 访问密码（公网访问用，别进仓库！）
+secret.txt
+
+# 自己的数据集（体积大，不进仓库）
+data/
+datasets/
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# 测试/工具临时目录
+.evtest/
+.dstest/
+
+# 本地专用：一键推送脚本（含本机账号信息，不进仓库、不进发布包）
+*.local.bat
+推送到GitHub.bat

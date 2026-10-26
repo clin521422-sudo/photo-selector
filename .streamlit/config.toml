@@ -1,0 +1,12 @@
+# Streamlit 运行配置（放在项目根目录，启动时自动读取）
+# 文档：https://docs.streamlit.io/develop/api-reference/configuration/config.toml
+
+[server]
+# 上传大小上限（MB）。公网暴露时这一条很重要，防止别人传超大文件塞满硬盘。
+maxUploadSize = 20
+# 服务器环境不自动开浏览器（本地双击启动.bat 时也不会弹，改由脚本自己开）
+headless = true
+
+[browser]
+# 关闭使用统计上报（项目演示不需要）
+gatherUsageStats = false

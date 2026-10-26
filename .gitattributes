@@ -1,0 +1,24 @@
+# 换行符与二进制标记（防止 git 把 .bat 转成 LF 导致 cmd 解析错误）
+* text=auto
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+*.py text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.bmp binary
+*.webp binary
+*.onnx binary
+*.pt binary
+*.zip binary
+*.exe binary
