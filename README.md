@@ -6,7 +6,30 @@
 
 上传照片 → 从**清晰度、曝光、色彩、主体**四个维度量化评分 → 给出综合建议（建议保留 / 建议复核 / 建议淘汰）。
 **辅助筛选，不做自动删除**，最终决定权留给用户。
+## English
 
+A photo-culling assistant for anyone drowning in too many shots. It scores each photo with four
+independent modules — Laplacian-variance sharpness, zone-weighted exposure, HSV colour richness,
+and YOLOv8n subject detection — combines them into a **keep / review / reject** verdict, and files
+the originals into matching folders with a CSV ledger and MD5 de-duplication.
+
+The runtime is deliberately light: OpenCV + NumPy only. The YOLO detector ships as a 12 MB ONNX
+file and runs through `cv2.dnn`, so **no PyTorch, CUDA or deep-learning install is required** on the
+machine that uses it.
+
+The app is a Streamlit web UI: batch upload, progress bar, sortable/filterable result table, CSV
+export, and a per-photo detail view (detection boxes, histogram, dominant colours, raw JSON).
+Access control is built in — direct LAN access needs no password, while tunnelled/internet access
+is password-gated with brute-force throttling.
+
+Everything is packaged for non-developers on Windows: one-click scripts to install the environment,
+run the app, toggle the firewall for LAN access, and bring up a temporary public HTTPS demo
+(Cloudflare Tunnel + QR code). The repository also contains an accuracy-evaluation tool (confusion
+matrix and threshold sweep from a simple Excel label sheet), plus a complete pipeline for labelling
+your own data and training a custom detector when the COCO classes are not enough.
+
+11 tests cover the four modules, the pipeline, access control, the label toolchain and the
+release scripts, and run on every push via GitHub Actions.
 ---
 
 ## 目录
